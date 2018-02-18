@@ -1,0 +1,34 @@
+#!/bin/bash
+set -x
+./safecoin-cli paxdeposit $1 0.01 aud 
+./safecoin-cli paxdeposit $1 0.01 bgn 
+./safecoin-cli paxdeposit $1 0.01 cad 
+./safecoin-cli paxdeposit $1 0.01 chf 
+./safecoin-cli paxdeposit $1 0.01 cny 
+./safecoin-cli paxdeposit $1 0.01 czk 
+./safecoin-cli paxdeposit $1 0.01 dkk 
+./safecoin-cli paxdeposit $1 0.01 eur 
+./safecoin-cli paxdeposit $1 0.01 gbp 
+./safecoin-cli paxdeposit $1 0.01 hkd 
+./safecoin-cli paxdeposit $1 0.01 hrk 
+./safecoin-cli paxdeposit $1 0.01 huf 
+./safecoin-cli paxdeposit $1 0.01 idr 
+./safecoin-cli paxdeposit $1 0.01 ils 
+./safecoin-cli paxdeposit $1 0.01 inr 
+./safecoin-cli paxdeposit $1 0.01 jpy 
+./safecoin-cli paxdeposit $1 0.01 krw 
+./safecoin-cli paxdeposit $1 0.01 mxn 
+./safecoin-cli paxdeposit $1 0.01 myr 
+./safecoin-cli paxdeposit $1 0.01 nok 
+./safecoin-cli paxdeposit $1 0.01 nzd 
+./safecoin-cli paxdeposit $1 0.01 php 
+./safecoin-cli paxdeposit $1 0.01 pln 
+./safecoin-cli paxdeposit $1 0.01 brl 
+./safecoin-cli paxdeposit $1 0.01 ron 
+./safecoin-cli paxdeposit $1 0.01 rub 
+./safecoin-cli paxdeposit $1 0.01 sek 
+./safecoin-cli paxdeposit $1 0.01 sgd 
+./safecoin-cli paxdeposit $1 0.01 thb 
+./safecoin-cli paxdeposit $1 0.01 try 
+./safecoin-cli paxdeposit $1 0.01 usd 
+./safecoin-cli paxdeposit $1 0.01 zar
