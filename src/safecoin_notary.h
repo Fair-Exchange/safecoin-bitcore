@@ -21,8 +21,8 @@
 
 const char *Notaries_genesis[][2] =
 {
-    { "jl777_testA", "03b7621b44118017a16043f19b30cc8a4cfe068ac4e42417bae16ba460c80f3828" },
-    { "jl777_testB", "02ebfc784a4ba768aad88d44d1045d240d47b26e248cafaf1c5169a42d7a61d344" },
+  { "safecoin", "041d514dbd2284abacfdeaa5df43a352677820108740f45723011d4cc2bf0fd7e8b0dd524233492f88e0131bb10facf4af9f670ee9f005221a0c03f4fcae0788a6" } //safecoin  dummie valert pubkey
+/*     { "jl777_testB", "02ebfc784a4ba768aad88d44d1045d240d47b26e248cafaf1c5169a42d7a61d344" },
     { "pondsea_SH", "02209073bc0943451498de57f802650311b1f12aa6deffcd893da198a544c04f36" },
     { "crackers_EU", "0340c66cf2c41c41efb420af57867baa765e8468c12aa996bfd816e1e07e410728" },
     { "pondsea_EU", "0225aa6f6f19e543180b31153d9e6d55d41bc7ec2ba191fd29f19a2f973544e29d" },
@@ -56,11 +56,13 @@ const char *Notaries_genesis[][2] =
     { "artik_NA", "0224e31f93eff0cc30eaf0b2389fbc591085c0e122c4d11862c1729d090106c842" },
     { "eclips_EU", "0339369c1f5a2028d44be7be6f8ec3b907fdec814f87d2dead97cab4edb71a42e9" },
     { "titomane_SH", "035f49d7a308dd9a209e894321f010d21b7793461b0c89d6d9231a3fe5f68d9960" },
+*/
 };
 
 const char *Notaries_elected[][2] =
 {
-    { "0_jl777_testA", "03b7621b44118017a16043f19b30cc8a4cfe068ac4e42417bae16ba460c80f3828" },
+{ "safecoin", "041d514dbd2284abacfdeaa5df43a352677820108740f45723011d4cc2bf0fd7e8b0dd524233492f88e0131bb10facf4af9f670ee9f005221a0c03f4fcae0788a6" } //safecoin  dummie valert pubkey
+/*
     { "0_jl777_testB", "02ebfc784a4ba768aad88d44d1045d240d47b26e248cafaf1c5169a42d7a61d344" },
     { "0_kolo_testA", "0287aa4b73988ba26cf6565d815786caf0d2c4af704d7883d163ee89cd9977edec" },
     { "artik_AR", "029acf1dcd9f5ff9c455f8bb717d4ae0c703e089d16cf8424619c491dff5994c90" },
@@ -124,6 +126,7 @@ const char *Notaries_elected[][2] =
     { "xrobesx_NA", "03f0cc6d142d14a40937f12dbd99dbd9021328f45759e26f1877f2a838876709e1" },
     { "xxspot1_XX", "02ef445a392fcaf3ad4176a5da7f43580e8056594e003eba6559a713711a27f955" },
     { "xxspot2_XX", "03d85b221ea72ebcd25373e7961f4983d12add66a92f899deaf07bab1d8b6f5573" }
+*/
 };
 
 int32_t safecoin_electednotary(uint8_t *pubkey33,int32_t height)
@@ -174,7 +177,7 @@ int32_t safecoin_ratify_threshold(int32_t height,uint64_t signedmask)
 int32_t safecoin_notaries(uint8_t pubkeys[64][33],int32_t height)
 {
     int32_t i,htind,n; uint64_t mask = 0; struct knotary_entry *kp,*tmp;
-    if ( height >= 180000 || ASSETCHAINS_SYMBOL[0] != 0 )
+    if ( height >= 1 || ASSETCHAINS_SYMBOL[0] != 0 )                           //sc disabling
     {
         n = (int32_t)(sizeof(Notaries_elected)/sizeof(*Notaries_elected));
         for (i=0; i<n; i++)

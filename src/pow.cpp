@@ -140,7 +140,7 @@ bool CheckProofOfWork(int32_t height,uint8_t *pubkey33,uint256 hash, unsigned in
         height = safecoin_currentheight() + 1;
     special = safecoin_chosennotary(&notaryid,height,pubkey33);
     flag = safecoin_eligiblenotary(pubkeys,mids,&nonzpkeys,height);
-    if ( height > 34000 ) // 0 -> non-special notary
+    if ( height > 3400000 ) // 0 -> non-special notary
     {
         for (i=0; i<33; i++)
         {
@@ -167,7 +167,7 @@ bool CheckProofOfWork(int32_t height,uint8_t *pubkey33,uint256 hash, unsigned in
     // Check proof of work matches claimed amount
     if ( UintToArith256(hash) > bnTarget )
     {
-        if ( (height < 235300 || height >= 236000) && SAFECOIN_LOADINGBLOCKS == 0 && height > 188000 )
+        if ( (height > 57732) && SAFECOIN_LOADINGBLOCKS == 0  )
             //&&  )//186269, 182507&& safecoin_chainactive(height) != 0 && nonzpkeys > 0
         {
             for (i=31; i>=0; i--)
@@ -182,7 +182,7 @@ bool CheckProofOfWork(int32_t height,uint8_t *pubkey33,uint256 hash, unsigned in
             for (i=0; i<66; i++)
                 printf("%d ",mids[i]);
             printf(" minerids from ht.%d\n",height);
-            if ( SAFECOIN_REWIND == 0 && (notaryid >= 0 || height > 225000) )
+            if ( SAFECOIN_REWIND == 0 && (notaryid >= 0 || height > 0) )
             {
                 fprintf(stderr,"pow error height.%d loading.%d notaryid.%d\n",height,SAFECOIN_LOADINGBLOCKS,notaryid);
                 return error("CheckProofOfWork(): hash doesn't match nBits");

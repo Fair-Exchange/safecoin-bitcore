@@ -57,7 +57,7 @@ public:
         consensus.nPowMaxAdjustUp = 16; // 16% adjustment up
         consensus.nPowTargetSpacing = 1 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true; //false;
-        /** 
+        /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
@@ -96,11 +96,11 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x0e8398ad8ba699fa41e1c56fe6112ca2530719c32b7e3d0cdb6610a458bd7e14"));
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("35.229.44.140", "35.229.44.140")); // seed node
-         vSeeds.push_back(CDNSSeedData("35.231.110.175", "35.231.110.175")); // seed node
-         vSeeds.push_back(CDNSSeedData("35.224.125.48", "35.224.125.48")); // seed node
-         vSeeds.push_back(CDNSSeedData("18.219.144.28", "18.219.144.28")); // seed node
+        vSeeds.push_back(CDNSSeedData("107.191.36.192", "107.191.36.192")); // seed node
+         vSeeds.push_back(CDNSSeedData("45.77.109.253", "45.77.109.253")); // seed node
          vSeeds.push_back(CDNSSeedData("safecoin.org", "dnsseed.safecoin.org")); // Safecoin
+         vSeeds.push_back(CDNSSeedData("ipv6admin.com", "dnsseed.ipv6admin.com")); // Ipv6ipv6admin
+         vSeeds.push_back(CDNSSeedData("fair.exchange", "dnsseed.fair.exchange")); // Safecoin
         // TODO: set up bootstrapping for mainnet
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,61);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,86);
@@ -135,7 +135,7 @@ public:
         };
         if ( pthread_create((pthread_t *)malloc(sizeof(pthread_t)),NULL,chainparams_commandline,(void *)&consensus) != 0 )
         {
-            
+
         }
     }
 };
