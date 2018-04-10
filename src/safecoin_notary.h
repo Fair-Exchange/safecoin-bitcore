@@ -258,7 +258,7 @@ int32_t safecoin_chosennotary(int32_t *notaryidp,int32_t height,uint8_t *pubkey3
         printf("safecoin_chosennotary ht.%d illegal\n",height);
         return(-1);
     }
-    if ( height >= 180000 )
+    if ( height >= 0 )
     {
         if ( (*notaryidp= safecoin_electednotary(pubkey33,height)) >= 0 )
         {

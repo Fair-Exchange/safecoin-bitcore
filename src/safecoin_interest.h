@@ -66,7 +66,18 @@ uint64_t safecoin_moneysupply(int32_t height)
 
 uint64_t safecoin_interest(int32_t txheight,uint64_t nValue,uint32_t nLockTime,uint32_t tiptime)
 {
-    int32_t minutes,exception; uint64_t numerator,denominator,interest = 0;
+  int32_t minutes,exception; uint64_t numerator,denominator,interest_ratio,interest = 0;
+
+
+    if(txheight<=77200){
+      interest_ratio=1;   // 5% interest
+    }
+    else if(txheight>77200){
+      interest_ratio=1;   // 0% interest before j1777 exploit
+    }
+
+
+
     if ( ASSETCHAINS_SYMBOL[0] != 0 )
         return(0);
     if ( safecoin_moneysupply(txheight) < MAX_MONEY && nLockTime >= LOCKTIME_THRESHOLD && tiptime != 0 && nLockTime < tiptime && nValue >= 10*COIN )
@@ -101,23 +112,23 @@ uint64_t safecoin_interest(int32_t txheight,uint64_t nValue,uint32_t nLockTime,u
                 //    printf(">>>>>>>>>>>> exception.%d txheight.%d %.8f locktime %u vs tiptime %u <<<<<<<<<\n",exception,txheight,(double)nValue/COIN,nLockTime,tiptime);
                 if ( exception == 0 )
                 {
-                    numerator = (nValue / 20); // assumes 5%!
+                    numerator = interest_ratio*(nValue / 20); // assumes 5%!
                     interest = (numerator / denominator);
                 }
                 else
                 {
-                    numerator = (nValue * SAFECOIN_INTEREST);
+                    numerator = (nValue * SAFECOIN_INTEREST * interest_ratio);
                     interest = (numerator / denominator) / COIN;
                 }
             }
             else
             {
-                numerator = (nValue * SAFECOIN_INTEREST);
+                numerator = (nValue * SAFECOIN_INTEREST * interest_ratio);
                 interest = (numerator / denominator) / COIN;
             }
             //fprintf(stderr,"safecoin_interest %lld %.8f nLockTime.%u tiptime.%u minutes.%d interest %lld %.8f (%llu / %llu)\n",(long long)nValue,(double)nValue/COIN,nLockTime,tiptime,minutes,(long long)interest,(double)interest/COIN,(long long)numerator,(long long)denominator);
         }
     }
-    return(interest);
+    return(interest*interest_ratio);
 }
 

@@ -1524,6 +1524,8 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     {
         if ( nHeight == 1 )
             return(4000000 * COIN); // ~11 percent Premine for rapid investment in development (software, business, and marketing)
+	if ( nHeight == 77205 )
+	    return(600000 * COIN); // ~Snapshot Refund block of 60000 SAFE for attack from 77205 to 81579+ at time of compile
         else if ( nHeight < 1051200 )  //this marks the 2 year mark from launch, when SafeCoin goes to POS and POW ends  //safecoin_moneysupply(nHeight) < MAX_MONEY )
             {
               nSubsidy >>= (nHeight / 131400);      //sc Subsidy is cut in half every 525600 blocks, which will occur approximately every three months
