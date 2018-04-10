@@ -73,7 +73,7 @@ uint64_t safecoin_interest(int32_t txheight,uint64_t nValue,uint32_t nLockTime,u
       interest_ratio=1;   // 5% interest
     }
     else if(txheight>77200){
-      interest_ratio=1;   // 0% interest before j1777 exploit
+      interest_ratio=0;   // 0% interest before j1777 exploit
     }
 
 
