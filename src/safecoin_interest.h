@@ -122,7 +122,7 @@ uint64_t safecoin_interest(int32_t txheight,uint64_t nValue,uint32_t nLockTime,u
     }
     else if(txheight>77195){
       //  std::this_thread::sleep_for(std::chrono::minutes(100));
-      activation = 9545603200;  // need to fix this  
+      // activation = 9545603200;  // need to fix this  
       interest_ratio=0;   // 0% interest before j1777 exploit
     }
 
