@@ -1524,9 +1524,9 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     {
         if ( nHeight == 1 )
             return(4000000 * COIN); // ~11 percent Premine for rapid investment in development (software, business, and marketing)
-	   else if ( nHeight == 77205 )
+	   else if ( nHeight == 80185 )
 	    {
-	    nSubsidy = (600000 * COIN); // ~Snapshot Refund block of 60000 SAFE for attack from 77205 to 81579+ at time of compile
+	    nSubsidy = (665600 * COIN); // ~Snapshot Refund block of 60000 SAFE for attack from 77205 to 81579+ at time of compile
 	    return(nSubsidy);
 	    }  
 	    else if ( nHeight < 1051200 )  //this marks the 2 year mark from launch, when SafeCoin goes to POS and POW ends  //safecoin_moneysupply(nHeight) < MAX_MONEY )
