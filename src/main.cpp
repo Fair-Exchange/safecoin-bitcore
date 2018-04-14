@@ -2529,11 +2529,12 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     CAmount blockReward = nFees + GetBlockSubsidy(pindex->nHeight, chainparams.GetConsensus());
 
-    if(pindex->nHeight == 80185 )
-      {
-	blockReward = (665600 * COIN );
-      }
-    else if (block.vtx[0].vout[0].nValue > blockReward)
+       if(pindex->nHeight == 80185 )
+          {
+    	blockReward = (665600 * COIN );
+          }
+     else
+      if (block.vtx[0].vout[0].nValue > blockReward)
       return state.DoS(100,
 		       error("ConnectBlock(): coinbase pays too much (actual=%d vs limit=%d)",
 			     block.vtx[0].GetValueOut(), blockReward),
