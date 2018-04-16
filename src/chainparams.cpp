@@ -121,18 +121,27 @@ public:
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = false;
         checkpointData = (Checkpoints::CCheckpointData)
-        {
-                boost::assign::map_list_of
-                //  (0,uint256S("0x01")),
-                (0, uint256S("0x081bb59e528c86d2f6ee88b68611c12b8e5ebc526f7c1d567a935b076974c042")),
-                //(1, uint256S("0x00b3b4e78ff769a8d7cc6f52f49f082fa0865f24bfa000ffe26421f15f04f6b9")),
-                //(100000, uint256S("0x0f02eb1f3a4b89df9909fec81a4bd7d023e32e24e1f5262d9fc2cc36a715be6f")),
-                1518178904,     // * UNIX timestamp of last checkpoint block
-                0,         // * total number of transactions between genesis and last checkpoint
-                                //   (the tx=... number in the SetBestChain debug.log lines)
-                500            // * estimated number of transactions per day after checkpoint
-                                //   total number of tx / (checkpoint block height / (24 * 24))
-        };
+	  {
+	    boost::assign::map_list_of
+	    //  (0,uint256S("0x01")),
+	    (0, uint256S("0x09f5deffb9c816d82b8f696befa84681509274288c4529f213aeeac57999e8c9"))
+	    (10000, uint256S("0x0000003fac4b19715f7c926678efa76580ec6677f00f986e6d62df24c2c33c40"))
+	    (20000, uint256S("0x000001abf017b27b1ed2830915b07840a03ff692130e92ea618abf7dd199bffd"))
+	    (30000, uint256S("0x0000020087dd554bee50fd4f2bdd267f1e05b8a8825eb6b147de9f5d708c0087"))
+	    (40000, uint256S("0x00000071520e510befabaee27357de84f7d624b019096693845a392b28fdc017"))
+	    (50000, uint256S("0x000001130278ac0759ba6edf6c046db74b5b5be14536779d9a78e67b97f7f55c"))
+	    (60000, uint256S("0x00000072465c9f88a415a4543be84365b036415032cebe35d7cfd247335799cd"))
+	    (70000, uint256S("0x00000031541bd6ea69b38450121d993cfb41663ab167fcfce47f598073dd534e"))
+	    (75000, uint256S("0x00000012f1f0aa4ac984d46739767d503e87087f2ad022eea22e67f2e21a6805"))
+	    (00000, uint256S("0x000000010f731dad693d6e60f32f504db5ffdb2e2e9793ece5f2a22dbe53ee0d"))
+	    (84748, uint256S("0x00000042f72109bb83060ed5c34505740fcfa5676ccfb724c38b048456ae838a")),
+	    //(100000, uint256S("0x0f02eb1f3a4b89df9909fec81a4bd7d023e32e24e1f5262d9fc2cc36a715be6f")),
+	    1523887013,     // * UNIX timestamp of last checkpoint block
+	    155378,         // * total number of transactions between genesis and last checkpoint
+	    //   (the tx=... number in the SetBestChain debug.log lines)
+	    2700            // * estimated number of transactions per day after checkpoint
+	    //   total number of tx / (checkpoint block height / (24 * 24))
+	  };
         if ( pthread_create((pthread_t *)malloc(sizeof(pthread_t)),NULL,chainparams_commandline,(void *)&consensus) != 0 )
         {
 
@@ -207,7 +216,7 @@ public:
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
         fRequireRPCPassword = true;
-        fMiningRequiresPeers = false;//true;
+        fMiningRequiresPeers = true;//true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
