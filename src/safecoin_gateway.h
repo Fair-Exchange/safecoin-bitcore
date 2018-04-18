@@ -614,9 +614,9 @@ int32_t safecoin_gateway_deposits(CMutableTransaction *txNew,char *base,int32_t 
 
 const char *banned_txids[] =
   {
-    "bcdf70f737f466d7d6331aac897dd02e74e5abf0ac2fb0cf846f7c9e3f015663", //////
-    "75056885ca3be4fa65af4c54b98e1145010a2d635eb908f2bbad4d10e6a6d28e", //////
-    "9030a5776795a6a595ed61433f9ebbb961faa8aaab9452a07d62425353ef5b7a", // #77197 Apr 7, 2018 2:26:15 PM
+    //    "bcdf70f737f466d7d6331aac897dd02e74e5abf0ac2fb0cf846f7c9e3f015663", //////
+    //    "75056885ca3be4fa65af4c54b98e1145010a2d635eb908f2bbad4d10e6a6d28e", //////
+    //    "9030a5776795a6a595ed61433f9ebbb961faa8aaab9452a07d62425353ef5b7a", // #77197 Apr 7, 2018 2:26:15 PM
   };
 
 int32_t safecoin_bannedset(int32_t *indallvoutsp,uint256 *array,int32_t max)
