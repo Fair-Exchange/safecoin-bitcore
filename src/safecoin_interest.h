@@ -100,7 +100,7 @@ uint64_t _safecoin_interestnew(uint64_t nValue,uint32_t nLockTime,uint32_t tipti
         minutes -= 59;
         interest = ((nValue / 10512000) * minutes);
     }
-    return(interest);
+    return(0);
 }
 
 uint64_t safecoin_interestnew(int32_t txheight,uint64_t nValue,uint32_t nLockTime,uint32_t tiptime)
@@ -108,7 +108,7 @@ uint64_t safecoin_interestnew(int32_t txheight,uint64_t nValue,uint32_t nLockTim
     uint64_t interest = 0;
     if ( txheight < SAFECOIN_ENDOFERA && nLockTime >= LOCKTIME_THRESHOLD && tiptime != 0 && nLockTime < tiptime && nValue >= COIN )    //safecoin_moneysupply(txheight) < MAX_MONEY &&
         interest = _safecoin_interestnew(nValue,nLockTime,tiptime);
-    return(interest);
+    return(0);
 }
 
 uint64_t safecoin_interest(int32_t txheight,uint64_t nValue,uint32_t nLockTime,uint32_t tiptime)
