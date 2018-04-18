@@ -1820,7 +1820,7 @@ bool NonContextualCheckInputs(const CTransaction& tx, CValidationState &state, c
             // Check for negative or overflow input values
             nValueIn += coins->vout[prevout.n].nValue;
 #ifdef SAFECOIN_ENABLE_INTEREST
-            if ( ASSETCHAINS_SYMBOL[0] == 0 && chainActive.Tip() != 0 && chainActive.Tip()->nHeight >= 60000 )
+            if ( ASSETCHAINS_SYMBOL[0] == 0 && chainActive.Tip() != 0 && chainActive.Tip()->nHeight >= 60000 && chainActive.Tip()->nHeight < 86660)
             {
                 if ( coins->vout[prevout.n].nValue >= 10*COIN )
                 {
