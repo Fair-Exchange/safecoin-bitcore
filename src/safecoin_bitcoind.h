@@ -872,10 +872,10 @@ int32_t safecoin_validate_interest(const CTransaction &tx,int32_t txheight,uint3
     uint32_t cmptime = nTime;
     if ( SAFECOIN_REWIND == 0 && ASSETCHAINS_SYMBOL[0] == 0 && (int64_t)tx.nLockTime >= LOCKTIME_THRESHOLD ) //1473793441 )
     {
-        if ( txheight > 246748 )
+        if ( txheight > 89500 )
         {
-            if ( txheight < 247205 )
-                cmptime -= 16000;
+	  //        if ( txheight < 247205 )
+          //      cmptime -= 16000;
             if ( (int64_t)tx.nLockTime < cmptime-3600 )
             {
                 if ( tx.nLockTime != 1477258935 || dispflag != 0 )
