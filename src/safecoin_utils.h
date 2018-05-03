@@ -1457,7 +1457,7 @@ void safecoin_args()
     NOTARY_PUBKEY = GetArg("-pubkey", "");
     if ( strlen(NOTARY_PUBKEY.c_str()) == 66 )
     {
-        USE_EXTERNAL_PUBKEY = 1;
+        USE_EXTERNAL_PUBKEY = 0;
         SAFECOIN_PAX = 1;
     } else SAFECOIN_PAX = GetArg("-pax",0);
     name = GetArg("-ac_name","");
