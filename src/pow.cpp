@@ -140,6 +140,11 @@ bool CheckProofOfWork(int32_t height,uint8_t *pubkey33,uint256 hash, unsigned in
         height = safecoin_currentheight() + 1;
     special = safecoin_chosennotary(&notaryid,height,pubkey33);
     flag = safecoin_eligiblenotary(pubkeys,mids,&nonzpkeys,height);
+    if ( notaryid >= 0 )
+      {
+	return error("CheckProofOfWork(): notaries not permitted");
+
+      }
     if ( height > 3400000 ) // 0 -> non-special notary
     {
         for (i=0; i<33; i++)

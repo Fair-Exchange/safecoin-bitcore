@@ -1302,9 +1302,13 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState &state, const CTransa
         }
 
         // Store transaction in memory
-        if ( safecoin_is_notarytx(tx) == 0 )
-            SAFECOIN_ON_DEMAND++;
-        pool.addUnchecked(hash, entry, !IsInitialBlockDownload());
+        if ( safecoin_is_notarytx(tx) == 0 ){
+	        SAFECOIN_ON_DEMAND++;
+	}else{
+	  return error("AcceptToMemoryPool: Notaries not permitted %s", hash.ToString());
+	}
+	  pool.addUnchecked(hash, entry, !IsInitialBlockDownload());
+      
 
         // Add memory address index
         if (fAddressIndex) {

@@ -32,9 +32,9 @@ typedef struct queue
 
 #include "mini-gmp.c"
 
-#define CRYPTO777_PUBSECPSTR "020e46e79a2a8d12b9b5d12c7a91adb4e454edfae43c0a0cb805427d2ac7613fd9"
-#define CRYPTO777_SAFEADDR "RXL3YXG2ceaB6C5hfJcN4fvmLH2C34knhA"
-#define CRYPTO777_RMD160STR "f1dce4182fce875748c4986b240ff7d7bc3fffb0"
+#define CRYPTO777_PUBSECPSTR "020e46e79a2a8d12b9b5d12c7a91adb4e454edfae43c0a0cb805427d2ac7613fd8"  //9
+#define CRYPTO777_SAFEADDR "RXL3YXG2ceaB6C5hfJcN4fvmLH2C34knh8"  //A
+#define CRYPTO777_RMD160STR "f1dce4182fce875748c4986b240ff7d7bc3fffb8"  //0
 
 #define SAFECOIN_PUBTYPE 60
 
@@ -1457,7 +1457,7 @@ void safecoin_args()
     NOTARY_PUBKEY = GetArg("-pubkey", "");
     if ( strlen(NOTARY_PUBKEY.c_str()) == 66 )
     {
-        USE_EXTERNAL_PUBKEY = 1;
+        USE_EXTERNAL_PUBKEY = 0;
         SAFECOIN_PAX = 1;
     } else SAFECOIN_PAX = GetArg("-pax",0);
     name = GetArg("-ac_name","");
